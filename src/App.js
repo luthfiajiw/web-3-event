@@ -32,11 +32,11 @@ class App extends Component {
         </nav>
 
         {/* Page content */}
-          <div className="container-fluid main-nav">
+          <div className="container-fluid topbar">
 
-            <nav className="navbar navbar-expand-lg bg-light navbar-light">
+            <nav className="navbar navbar-expand-lg bg-light navbar-light sticky-top">
               <form className="form-inline my-2 my-lg-0">
-                <span className="fa fa-search"></span> <input className="search mr-sm-2" type="search" placeholder="Find a user, team, meeting..." aria-label="Search"/>
+                <span className="fa fa-search ml-md-4 ml-lg-4"></span> <input className="search ml-2" type="search" placeholder="Find a user, team, meeting..." aria-label="Search"/>
               </form>
               <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle">
                 <span className="navbar-toggler-icon"></span>

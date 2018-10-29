@@ -33,6 +33,7 @@
 
 body {
   background-color: rgb(230, 238, 244, .4);
+  font-family: 'Hind', sans-serif;
 }
 
 .wrapper {
@@ -42,13 +43,12 @@ body {
 }
 
 #sidebar {
-  min-width: 80px;
-  max-width: 80px;
+  min-width: 60px;
   background: white;
   color: #5184e7;
   transition: all .3s;
   min-height: 100vh;
-  border-right: 2px solid #dddddd;
+  border-right: 1px solid #dddddd;
 }
 
 #sidebar .sidebar-header{
@@ -57,9 +57,9 @@ body {
 }
 
 .logo-brand {
-  width: 60px;
-  height: 50px;
-  margin-top: 15px;
+  width: 40px;
+  height: 30px;
+  margin-top: 12px;
 }
 
 #sidebar ul.components {
@@ -67,8 +67,8 @@ body {
 }
 
 #sidebar ul li a {
-  margin: 30px 5px;
-  padding: 20px 10px;
+  margin: 30px 0;
+  padding: 5px 0;
   display: block;
   font-size: 1.1em;
   text-align: center;
@@ -82,40 +82,7 @@ body {
   transition-timing-function: ease-in;
 }
 
-.bg-light {
-  background-color: white!important;
-}
-
-
-.search {
-  position: relative;
-  border: none;
-  background: transparent;
-  margin-left: 10px;
-  font-size: 14px;
-}
-
-.search input {
-  text-indent: 30px;
-  border: none!important;
-}
-
-.fa-search {
-  top: 24px;
-  margin-left: 30px;
-  font-size: 15px;
-  opacity: .6;
-}
-
-.main-nav{
-  padding: 0 0!important;
-}
-
-nav {
-  min-height: 80px;
-  border-bottom: 2px solid #ddd;
-}
-/* CONTENT */
+/* TOPBAR */
 .avatar {
   width: 50px;
   height: 50px;
@@ -147,25 +114,123 @@ nav {
   transition-timing-function: ease-out;
 }
 
+.bg-light {
+  background-color: white!important;
+}
+
+.search {
+  position: relative;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+}
+
+.search input {
+  text-indent: 30px;
+  border: none!important;
+}
+
+.fa-search {
+  top: 24px;
+  font-size: 15px;
+  opacity: .6;
+}
+
+.topbar{
+  padding: 0 0!important;
+}
+
+nav {
+  min-height: 50px!important;
+  border-bottom: 1px solid #ddd;
+}
+
 /* EVENT LIST PANEL */
+.h3 {
+  font-weight: lighter;
+}
+
 .main-panel .row-panel{
   min-height: 87vh;
 }
 
 .side-panel {
   background: white;
-  border-left: 2px solid #ddd;
+  border-left: 1px solid #ddd;
 }
 
 .btn-create {
+  transform: translateY(-20%);
   border: 1px solid #5184e7;
-  padding: 7px 14px;
-  font-size: 14px;
+  border-radius: 3px;
+  padding: 2px 5px;
+  font-size: 12px;
+  background-color: #5184e7;
+  color: white;
 }
 
 .event-list {
   background: white!important;
-  padding: 45px 20px;
-  border: 2px solid #ddd;
+  padding: 20px 20px;
   border-radius: 5px;
+  box-shadow: 0px 0px 1px 2px rgb(221, 221, 221, .2);
+}
+
+.event-list:hover {
+  transform: translateY(-5%);
+  transition: .1s;
+  transition-timing-function: ease-in;
+  cursor: pointer;
+  box-shadow: 0px 5px rgb(221, 221, 221, .5);
+}
+
+.event-list-contents {
+  font-size: 13px!important;
+  color: rgb(99, 99, 99);
+}
+
+.event-list #img {
+  background-image: linear-gradient(125deg, rgb(233, 219, 183), rgb(214, 120, 33), rgb(214, 120, 33));
+  padding: 20px 25px!important;
+  border-radius: 5px;
+}
+
+.event-list #img1 {
+  background-image: linear-gradient(125deg, rgb(143, 98, 227), rgb(95, 33, 198));
+  padding: 20px 32px!important;
+  border-radius: 5px;
+}
+
+.event-list #img2 {
+  background-image: linear-gradient(125deg, rgb(208, 111, 195), rgb(205, 0, 160));
+  padding: 20px 16px!important;
+  border-radius: 5px;
+}
+
+.event-list #img3 {
+  background-image: linear-gradient(125deg, rgb(101, 196, 145), rgb(57, 230, 136));
+  padding: 20px 18px!important;
+  border-radius: 5px;
+}
+
+.img {
+  font-size: 1.8em;
+  color: white;
+  font-weight: bolder;
+}
+
+.date-events {
+  font-size: 12px;
+  color: rgb(99, 99, 99, .5);
+}
+
+.num-attachment {
+  color: #5184e7;
+}
+
+/* SIDEPANEL CONTENTS */
+.side-panel img {
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
 }

@@ -47,8 +47,9 @@ body {
   background: white;
   color: #5184e7;
   transition: all .3s;
-  min-height: 100vh;
+  height: 100%;
   border-right: 1px solid #dddddd;
+  position: fixed;
 }
 
 #sidebar .sidebar-header{
@@ -59,7 +60,7 @@ body {
 .logo-brand {
   width: 40px;
   height: 30px;
-  margin-top: 12px;
+  margin-top: 15px;
 }
 
 #sidebar ul.components {
@@ -120,14 +121,14 @@ body {
 
 .search {
   position: relative;
-  border: none;
   background: transparent;
   font-size: 14px;
+  display: flex;
+  border: none;
 }
 
 .search input {
   text-indent: 30px;
-  border: none!important;
 }
 
 .fa-search {
@@ -138,6 +139,7 @@ body {
 
 .topbar{
   padding: 0 0!important;
+  margin-left: 60px;
 }
 
 nav {
@@ -167,6 +169,15 @@ nav {
   font-size: 12px;
   background-color: #5184e7;
   color: white;
+}
+
+.btn-create:hover {
+  color: white;
+  background-color: #87a8e9;
+  border-color: #87a8e9;
+  text-decoration: none;
+  transition: .2s;
+  transition-timing-function: ease-out;
 }
 
 .event-list {
@@ -228,9 +239,108 @@ nav {
   color: #5184e7;
 }
 
+/* CREATE EVENT PANEL */
+.btn-cancel {
+  padding: 10px 20px;
+  color: rgb(124, 124, 124);
+  background-color: rgb(230, 238, 244, .6);
+  border-radius: 5px;
+}
+
+.btn-cancel:hover {
+  color: rgb(124, 124, 124);
+  text-decoration: none;
+  background-color: rgb(230, 238, 244);
+  transition: .2s;
+  transition-timing-function: ease-out;
+}
+
+.label-checkbox {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.label-checkbox input{
+  position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.label-checkbox:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a green background */
+.label-checkbox input:checked ~ .checkmark {
+    background-color: #3bb95b;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.label-checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.label-checkbox .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
 /* SIDEPANEL CONTENTS */
 .side-panel img {
   width: 50px;
   height: 50px;
   border: 1px solid black;
+}
+
+.date-calendar {
+  font-size: 15px;
+  color: rgb(99, 99, 99, .5);
+}
+
+@media only screen and (min-width: 1366px) {
+    /* For mobile phones: */
+    div.side-panel {
+        position: fixed;
+        top: 50px;
+        right: 0;
+        height: 100%;
+        overflow: hidden;
+    }
 }

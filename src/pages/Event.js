@@ -29,7 +29,7 @@ class Event extends Component {
     } else {
       this.setState({
         date: "0" + thisDate,
-        month: month[this.Month]
+        month: month[thisMonth]
       })
     }
   }
@@ -44,7 +44,7 @@ class Event extends Component {
         <div className="container-fluid">
           <div className="row text-center row-panel">
             <div className="col-md-10 order-2 order-md-1 pl-5 pr-5 pt-4">
-              <div className="mb-5 d-flex mt-2 align-items-center bd-highlight">
+              <div className="mb-5 d-flex mt-4 align-items-center bd-highlight">
                 <span className="h2">Event</span> <Link to="/create-event" className="btn-create ml-3">+ Create new</Link>
               </div>
 

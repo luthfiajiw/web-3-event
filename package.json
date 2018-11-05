@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "react": "^16.6.0",
+    "react-datepicker": "^1.7.0",
     "react-dom": "^16.6.0",
     "react-parallax": "^2.0.1",
     "react-router-dom": "^4.3.1",

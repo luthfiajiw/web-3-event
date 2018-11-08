@@ -1,8 +1,62 @@
+@font-face {
+      font-family: 'font-law';
+      src: url('./font/font-law.eot?14602923');
+      src: url('./font/font-law.eot?14602923#iefix') format('embedded-opentype'),
+           url('./font/font-law.woff?14602923') format('woff'),
+           url('./font/font-law.ttf?14602923') format('truetype'),
+           url('./font/font-law.svg?14602923#font-law') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+
+    .demo-icon
+    {
+      font-family: "font-law";
+      font-style: normal;
+      font-weight: normal;
+      speak: none;
+      font-size: 20px;
+      text-decoration: none;
+
+      display: inline-block;
+      text-decoration: inherit;
+      width: 1em;
+      margin-right: auto;
+      text-align: left;
+      /* opacity: .8; */
+
+      /* For safety - reset parent styles, that can break glyph codes*/
+      font-variant: normal;
+      text-transform: none;
+
+      /* fix buttons height, for twitter bootstrap */
+      line-height: 1em;
+
+      /* Animation center compensation - margins should be symmetric */
+      /* remove if not needed */
+      margin-left: 0;
+
+      /* You can be more comfortable with increased icons size */
+      /* font-size: 120%; */
+
+      /* Font smoothing. That was taken from TWBS */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+
+      /* Uncomment for 3D effect */
+      /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+    }
+
+    .demo-icon:hover {
+      text-decoration: none;
+    }
 
 body {
   background-color: rgb(230, 238, 244, .4);
-  font-family: 'Hind', sans-serif;
+  font-family: 'Molengo', sans-serif;
   overflow-x: hidden;
+  font-weight: lighter;
 }
 
 .wrapper {
@@ -10,8 +64,9 @@ body {
   width: auto;
 }
 
+/* SIDEBAR */
 #sidebar {
-  min-width: 60px;
+  min-width: 80px;
   background: white;
   color: #007bff;
   transition: all .3s;
@@ -27,8 +82,8 @@ body {
 }
 
 .logo-brand {
-  width: 40px;
-  height: 30px;
+  width: 70px;
+  height: 50px;
   margin-top: 15px;
 }
 
@@ -37,7 +92,7 @@ body {
 }
 
 #sidebar ul li a {
-  margin: 30px 0;
+  margin: 20px 0;
   padding: 5px 0;
   display: block;
   font-size: 1.1em;
@@ -45,16 +100,50 @@ body {
   color: #007bff;
 }
 
-#sidebar ul li a:hover {
-  color: #7386d5;
-  background: #fff;
-  transition: .3s;
-  transition-timing-function: ease-in;
+.sidenav-icon:before {
+  content:".";
+  height: 100%;
+  width: 10%;
+  font-size: 25px;
+  margin-right: 5px;
+  background-color: #007bff;
+  color: #007bff;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  float: left;
+  transition: .2s;
+  transition-timing-function: ease-out;
 }
+
+.sidenav-icon{
+  height: 37px;
+}
+
 
 /* TOPBAR */
 .top-navbar {
   animation: moveDown 2s ease;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-image: url('./assets/toggle-menu.svg');
+  border: none;
+  outline: none;
+}
+
+.navbar-toggler {
+  padding: 0;
+}
+
+.navbar-toggler:active {
+  transform: scale(1.5);
+  transition: .2s;
+  transition-timing-function: ease-out;
+  box-shadow: 0px 5px 2px rgb(170, 204, 255, .5);
 }
 
 .avatar {
@@ -95,7 +184,8 @@ body {
 .search {
   position: relative;
   background: transparent;
-  font-size: 13px;
+  font-size: 15px;
+  padding: 10px auto;
   display: flex;
   border: none;
 }
@@ -109,11 +199,11 @@ body {
 
 .topbar{
   padding: 0 0!important;
-  margin-left: 60px;
+  margin-left: 80px;
 }
 
 nav {
-  min-height: 50px!important;
+  min-height: 80px!important;
   border-bottom: 1px solid #ddd;
 }
 
@@ -173,7 +263,7 @@ nav {
 
 .event-list-contents {
   font-size: 13px!important;
-  color: rgb(99, 99, 99);
+  color: rgb(99, 99, 99, .8);
 }
 
 .event-list #img {
@@ -225,6 +315,18 @@ nav {
   border-radius: 5px;
 }
 
+.form-control {
+  padding: 24px;
+}
+
+select {
+  height: 52px!important;
+}
+
+.container-datepicker {
+  padding: 13.5px!important;
+}
+
 .btn-cancel:hover {
   color: rgb(124, 124, 124);
   text-decoration: none;
@@ -233,21 +335,27 @@ nav {
   transition-timing-function: ease-out;
 }
 
+#btn-cancel-2 {
+  font-size: 19px!important;
+}
+
 .input-time {
-  padding: 5px 10px;
+  padding:13px 10px;
   width: 80%;
 }
 
 .time-input {
   border: 1px solid #ddd;
   border-radius: 5px;
+  height: 52px;
 }
 
 .btn-time {
   border: none;
   width: 100%;
+  height: 100%;
   font-size: 11.5px;
-  padding: 0 13px;
+  padding: 0 15px;
   border-left: 1px solid #ddd;
   background: transparent;
   cursor: pointer;
@@ -260,6 +368,10 @@ nav {
 
 .btn-time:last-child {
   border-bottom-right-radius: 4px;
+}
+
+.agreement-text {
+  opacity: .6
 }
 
 .btn-time:hover {
@@ -302,6 +414,12 @@ nav {
   text-align: center;
 }
 
+.drag-drop-upload{
+  width: 20px;
+  height: 20px;
+}
+
+
 .second-card, .first-card {
   animation: fadeIn 2s ease-in-out;
 }
@@ -310,6 +428,14 @@ nav {
   font-size: 14px;
   margin-top: 10px;
   list-style: none;
+}
+
+.member-image:hover {
+  transform: translateY(-5%);
+  cursor: pointer;
+  box-shadow: 0px 5px 2px rgb(213, 213, 213);
+  transition: .2s;
+  transition-timing-function: ease-in;
 }
 
 #member-image-1 {
@@ -403,6 +529,14 @@ nav {
   margin-right: 8px;
   text-align: center;
   cursor: pointer;
+}
+
+#member-invite:hover {
+  transform: translateY(-5%);
+  cursor: pointer;
+  box-shadow: 0px 5px 2px rgb(213, 213, 213);
+  transition: .2s;
+  transition-timing-function: ease-in;
 }
 
 .label-checkbox {
@@ -513,16 +647,43 @@ nav {
 
 
 /* SIDEPANEL CONTENTS */
-.side-panel img, .side-panel1 img {
-  width: 50px;
-  height: 50px;
-  border: 1px solid black;
+.side-panel img {
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px 5px rgb(152, 152, 152, .1);
+}
+
+.side-panel1 img{
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+}
+
+.side-panel1 .img {
+  background-color: rgb(101, 101, 101);
+  border-radius: 5px;
 }
 
 .date-calendar {
   font-size: 15px;
   font-weight: bolder;
   color: rgb(99, 99, 99, .5);
+}
+
+.view-file-link {
+  font-size: 12px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #007bff;
+  cursor: pointer;
+  padding: 0;
+}
+
+.view-file-link:hover {
+  text-decoration: underline;
+  color: #046bd9;
 }
 
 .progress {
@@ -539,9 +700,26 @@ nav {
 }
 
 /* BOTTOM BAR */
+.bottom-bar {
+  padding-bottom: 0;
+}
+
 .link-bottom-bar {
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.style-bottom {
+  display: block;
+  position: relative;
+}
+
+.botnav-icon {
+  height: 5px;
+  width: 100%;
+  background-color: #007bff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 /* ANIMATION */
@@ -607,16 +785,32 @@ nav {
       right: 0;
       height: 100%;
       overflow: hidden;
-      z-index: 1000;
       animation: moveLeft 2s ease!important;
+  }
+
+  #logo-brand {
+    display: none;
+  }
+
+  .side-panel1 img {
+    box-shadow: 1px 1px 10px 5px rgb(152, 152, 152, .2);
   }
 
   .bottom-bar {
     display: none;
   }
+
+  #btn-cancel-1 {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 768px){
+  h2 {
+    font-size: 25px;
+    margin-top: 0!important;
+    margin-bottom: 15px;
+  }
   .topbar {
     margin-left: 0;
     animation: moveDown 2s ease-in;
@@ -626,20 +820,66 @@ nav {
     margin-bottom: 75px;
   }
 
+  #logo-brand {
+    width: 30px;
+    height: 40px;
+    margin-right: 5px;
+  }
+
+  .search {
+    width: auto;
+  }
+
+  .demo-icon {
+    font-size: 20px;
+    margin-left: .2em;
+    margin-right: .2em;
+  }
+
+  .demo-icon:hover {
+    text-decoration: none;
+  }
+
   #sidebar {
     display: none;
   }
 
   .create-event, .create-event input, .create-event .btn {
-    font-size: .9em!important;
+    font-size: 1em!important;
   }
 
-  .bottom-bar {
-    height: 50px;
+  .input-group-append {
+    font-size: .8em;
+  }
+
+  nav.bottom-bar {
+    min-height: 50px!important;
+    border-top: 1px solid rgb(76, 159, 249, .5);
   }
 
   .side-panel{
     border: none;
   }
 
+  #btn-cancel-2 {
+    display: none
+  }
+
+}
+
+@media (max-width: 320px) {
+  nav.bottom-bar {
+    min-height: 40px!important;
+    border-top: 1px solid rgb(76, 159, 249, .5);
+  }
+
+  .search {
+    font-size: 11px;
+  }
+
+  .demo-icon {
+    font-size: 18px;
+    margin-right: 0!important;
+    margin-left: 0;
+  }
 }

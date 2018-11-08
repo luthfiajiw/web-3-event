@@ -45,7 +45,7 @@ class Event extends Component {
           <div className="row text-center row-panel">
             <div className="col-md-10 order-2 order-md-1 pl-5 pr-5 pt-4">
               <div className="mb-5 d-flex mt-4 align-items-center bd-highlight">
-                <span className="h2">Event</span> <Link to="/create-event" className="btn-create ml-3">+ Create new</Link>
+                <span className="h2">Event</span> <Link to="/create-event" className="btn-create ml-auto ml-md-3 ml-lg-3">+ Create new</Link>
               </div>
 
               <div className="row event-list my-4 text-center text-md-left">
@@ -128,9 +128,9 @@ class Event extends Component {
 
 
             <div className="col-md-2 order-1 order-md-2 side-panel text-center">
-              <div className="row my-4 text-center text-md-left">
-                <div className="col-md-12 d-md-flex pl-4 mt-4">
-                  <img src="" alt=""/>
+              <div className="row my-4 text-center">
+                <div className="col-md-12 d-md-flex pl-4 mt-5 text-center">
+                  <img src={require('../assets/icon-calendar.svg')} alt=""/>
                   <div className="ml-md-4 ml-lg-4 mt-2 mt-md-0 mt-lg-0">
                     <h5>Calendar</h5>
                     <span className="date-calendar">{this.state.date} {this.state.month}</span>

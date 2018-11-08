@@ -12,6 +12,7 @@ class CreateEvent extends Component {
       month: "",
       startDate: moment(),
       selectedDate: "",
+      value: "",
       customTxt: "No file chosen yet",
       dateHour: 0,
       hour: "0am",
@@ -21,14 +22,16 @@ class CreateEvent extends Component {
     this.textInput = React.createRef();
   }
 
-
+  //handle date change
   handleChange = (date) => {
     this.setState({
       startDate: date,
-      selectedDate: this.refs.dateValue.input.value
+      selectedDate: this.refs.dateValue.input.value,
+      value: date
     })
   }
 
+  //handle input focus
   handleFocus = () => {
     this.refs.input1.focus()
   }
@@ -42,7 +45,7 @@ class CreateEvent extends Component {
 
     let hour = this.state.dateHour
 
-    if (hour < 24) {
+    if (hour < 23) {
       hour = hour + 1
     }
 
@@ -197,13 +200,16 @@ class CreateEvent extends Component {
         <div className="container-fluid  create-event">
           <div className="row row-panel">
             <div className="col-md-7 pl-3 pl-md-5 pl-lg-5 pr-3 pr-md-2 pr-lg-2 pt-4">
+              <div className="mb-5 mt-4 d-flex align-items-center bd-highlight">
+                <h2 className="mt-1">Create Event</h2> <Link to='/' id="btn-cancel-1" className="btn-cancel ml-auto">Cancel</Link>
+              </div>
               <div className="card px-4 py-4 first-card">
                 <div className="content">
                   <form>
                     <div className="row">
                       <div className="col-md-12">
                           <label>Title Event</label>
-                          <div className="input-group mb-4">
+                          <div className="input-group">
                             <input ref="input1" type="text" className="form-control" placeholder="Title" aria-label="Title" aria-describedby="button-addon2"/>
                             <div className="input-group-append">
                               <button onClick={this.handleFocus} className="btn btn-outline-primary" type="button" id="button-addon2">+ Add description</button>
@@ -213,19 +219,21 @@ class CreateEvent extends Component {
                     </div>
 
                     <div className="row">
-                      <div className="col-md-4 mt-xs-3 mt-sm-3">
+                      <div className="col-md-4 mt-3">
                         <label>Day</label>
                           <DatePicker
                               selected={this.state.startDate}
                               onChange={this.handleChange}
                               ref="dateValue"
                               dateFormat="DD MMMM YYYY"
+                              value={this.state.value}
                               className="container-datepicker"
                               placeholderText="Click to select a date"
+                              withPortal
                           />
                       </div>
 
-                      <div className="col-md-3 mt-xs-3 mt-sm-3">
+                      <div className="col-md-3 mt-3">
                         <label>Hour</label>
                         <div className="d-flex time-input justify-content-between">
                           <div className="input-time">{this.state.hour}</div>
@@ -236,7 +244,7 @@ class CreateEvent extends Component {
                         </div>
                       </div>
 
-                      <div className="col-md-2 mt-xs-3 mt-sm-3">
+                      <div className="col-md-2 mt-3">
                         <label>Minute</label>
                         <div className="d-flex time-input justify-content-between">
                           <div className="input-time">{this.state.minute}</div>
@@ -247,7 +255,7 @@ class CreateEvent extends Component {
                         </div>
                       </div>
 
-                      <div className="col-md-3 mt-xs-3 mt-sm-3">
+                      <div className="col-md-3 mt-3">
                         <label>Duration</label>
                         <div className="input-group mb-2">
                           <select className="custom-select">
@@ -268,7 +276,7 @@ class CreateEvent extends Component {
                     <div className="row">
                       <div className="col-md-12 mb-4">
                         <label className="label-checkbox">
-                          <span>This event will take place on the {this.state.selectedDate} start from {this.state.dateHour}:{this.state.dateMinute}</span>
+                          <span className="agreement-text">This event will take place on the {this.state.selectedDate} start from {this.state.dateHour}:{this.state.dateMinute}</span>
                           <input type="checkbox"/>
                           <span className="checkmark"></span>
                         </label>
@@ -287,7 +295,7 @@ class CreateEvent extends Component {
                       </div>
                     </div>
 
-                    <div className="row mt-5">
+                    <div className="row my-5">
                       <div className="col-md-12">
                         <label>Upload attachements</label>
                         <br/>
@@ -312,7 +320,7 @@ class CreateEvent extends Component {
                       <div className="col-md-12">
                         <div className="drop-files text-center">
                           <input type="file" hidden="hidden"/>
-                          <span>You can also drop your files here</span>
+                          <img className="drag-drop-upload" src={require('../assets/upload-drag-cloud.svg')} alt=""/> <span className="">You can also drop your files here</span>
                         </div>
                       </div>
                     </div>
@@ -323,6 +331,9 @@ class CreateEvent extends Component {
             </div>
 
             <div className="col-md-3 pl-3 pl-md-2 pl-lg-2 pr-3 pr-md-5 pr-lg-5 pt-4">
+              <div className="mb-3 mb-md-5 mb-lg-5 mt-4 d-flex align-items-center bd-highlight">
+                <span className="h2 ml-auto"><Link to='/' id="btn-cancel-2" className="btn-cancel">Cancel</Link></span>
+              </div>
               <div className="card px-4 py-4 second-card">
                 <div className="content">
 
@@ -331,9 +342,9 @@ class CreateEvent extends Component {
                     <div className="col-md-12 mb-4">
                       <label>Add team members</label>
                       <div className="members d-flex justify-content-start">
-                        <div className="bd-highlight" id="member-image-1">LA</div>
-                        <div className="bd-highlight" id="member-image-2">AM</div>
-                        <div className="bd-highlight" id="member-image-3">ES</div>
+                        <div className="bd-highlight member-image" id="member-image-1">LA</div>
+                        <div className="bd-highlight member-image" id="member-image-2">AM</div>
+                        <div className="bd-highlight member-image" id="member-image-3">ES</div>
                         <div id="member-invite">
                           <img className="icon" src={require('../assets/icons8-telegram-app.svg')}/> +
                         </div>
@@ -395,11 +406,13 @@ class CreateEvent extends Component {
 
 
 
-            <div className="col-md-2 side-panel1 text-center mt-3 mt-md-0 mt-lg-0">
+            <div className="col-md-2 side-panel1 text-center">
               <div className="row my-4 text-center text-md-left">
                 <div className="col-md-12 d-md-flex pl-4 mt-4">
-                  <img src="" alt=""/>
-                  <div className="ml-md-4 ml-lg-4 mt-2 mt-md-0 mt-lg-0">
+                  <div className="img">
+                    <img src={require('../assets/upload-cloud.svg')} alt=""/>
+                  </div>
+                  <div className="ml-md-4 ml-lg-4 mt-2">
                     <h5>Uploader</h5>
                     <span className="date-calendar">{this.state.date} {this.state.month}</span>
                   </div>
@@ -407,36 +420,36 @@ class CreateEvent extends Component {
               </div>
 
 
-              <div className="row mt-5 text-left">
+              <div className="row my-5 text-left">
                 <div className="col-md-12">
                   <div className="progress" style={{height: '5px'}}>
                     <div className="progress-bar" role="progressbar" style={{width: '100%'}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
-                  <div className="file-size mt-2">10,9<span className="byte-ext">MB</span></div>
+                  <div className="file-size my-2">10,9<span className="byte-ext">MB</span></div>
                   <div className="file-name my-1">User_interviews.pdf</div>
-                  <a href="">View file</a>
+                  <button className="view-file-link">View file</button>
                 </div>
               </div>
-              <div className="row mt-4 text-left">
+              <div className="row mt-3 text-left">
                 <div className="col-md-12">
                   <div className="progress" style={{height: '5px'}}>
                     <div className="progress-bar" role="progressbar" style={{width: '30%', borderRadius: '5px'}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
-                  <div className="file-size mt-2">7,48<span className="byte-ext">MB</span></div>
-                  <img src={require('../assets/Web.jpg')} alt="" style={{width: '70%', height: '100px'}}/><br/>
-                  <div className="file-name my-1">Web.jg</div>
-                  <a href="">View file</a>
+                  <div className="file-size my-2">7,48<span className="byte-ext">MB</span></div>
+                  <img src={require('../assets/Web.jpg')} alt="" style={{width: '70%', height: '65%'}}/><br/>
+                  <div className="file-name my-2">Web.jpg</div>
+                  <button type="button" disabled className="view-file-link">View file</button>
                 </div>
               </div>
-              <div className="row mt-4 text-left">
+              <div className="row my-5 text-left">
                 <div className="col-md-12">
                   <div className="progress" style={{height: '5px'}}>
                     <div className="progress-bar" role="progressbar" style={{width: '0%'}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
-                  <div className="file-size mt-2">6,00<span className="byte-ext">MB</span></div>
-                  <img src={require('../assets/Web-1.jpg')} alt="" style={{width: '70%', height: '100px'}}/><br/>
-                  <div className="file-name my-1">Web-1.jpg</div>
-                  <a href="">View file</a>
+                  <div className="file-size my-2">6,00<span className="byte-ext">MB</span></div>
+                  <img src={require('../assets/Web-1.jpg')} alt="" style={{width: '70%', height: '65%'}}/><br/>
+                  <div className="file-name my-2">Web-1.jpg</div>
+                  <button type="button" disabled className="view-file-link">View file</button>
                 </div>
               </div>
             </div>

@@ -5,8 +5,9 @@ class Topbar extends Component {
   render() {
     return (
       <nav className="top-navbar navbar navbar-expand-lg bg-light navbar-light sticky-top">
+        <img id="logo-brand" src={require('../assets/logo-web.svg')} alt="cloud9"/>
         <form className="form-inline my-2 my-lg-0">
-          <img src={require('../assets/icon-search.svg')} className="fa fa-search ml-md-4 ml-lg-4"/> <input className="search ml-2" type="search" placeholder="Find a user, team, meeting..." aria-label="Search"/>
+          <img src={require('../assets/icon-search.svg')} className="fa fa-search ml-md-4 ml-lg-4 mr-2"/> <input className="search" type="search" placeholder="Find somethings..." aria-label="Search"/>
         </form>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle">
           <span className="navbar-toggler-icon"></span>

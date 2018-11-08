@@ -10,6 +10,7 @@
 .rc-calendar-input-wrap {
   position: relative;
   padding: 6px;
+  display: none;
 }
 .rc-calendar-input-wrap:after {
   content: '';
@@ -255,16 +256,20 @@
 .rc-calendar-header .rc-calendar-prev-month-btn {
   position: absolute;
   left: 25px;
+  font-size: 25px;
 }
 .rc-calendar-header .rc-calendar-prev-month-btn:after {
   content: '\2039';
+  color: #007bff;
 }
 .rc-calendar-header .rc-calendar-next-month-btn {
   position: absolute;
   right: 25px;
+  font-size: 25px;
 }
 .rc-calendar-header .rc-calendar-next-month-btn:after {
   content: '\203A';
+  color: #007bff;
 }
 .rc-calendar-year-select,
 .rc-calendar-month-select,
@@ -295,7 +300,7 @@
   position: absolute;
   top: 0;
   cursor: pointer;
-  color: #999;
+  color: #007bff;
   font-family: Arial, "Hiragino Sans GB", "Microsoft Yahei", "Microsoft Sans Serif", sans-serif;
   padding: 0 5px;
   font-size: 16px;

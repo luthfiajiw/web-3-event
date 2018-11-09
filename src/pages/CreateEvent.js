@@ -46,7 +46,7 @@ class CreateEvent extends Component {
     let hour = this.state.dateHour
 
     if (hour < 23) {
-      hour = hour + 1
+      hour += 1
     }
 
     this.setState({
@@ -75,7 +75,7 @@ class CreateEvent extends Component {
     let hour = this.state.dateHour
 
     if (hour > 0) {
-      hour = hour - 1
+      hour -= 1
     }
 
     this.setState({
@@ -105,7 +105,7 @@ class CreateEvent extends Component {
     let minute = this.state.dateMinute
 
     if (minute < 55) {
-      minute = minute + 5
+      minute += 5
     }
 
     this.setState({
@@ -120,7 +120,7 @@ class CreateEvent extends Component {
     let minute = this.state.dateMinute
 
     if (minute > 0) {
-      minute = minute - 5
+      minute -= 5
     }
 
     this.setState({
@@ -276,7 +276,7 @@ class CreateEvent extends Component {
                     <div className="row">
                       <div className="col-md-12 mb-4">
                         <label className="label-checkbox">
-                          <span className="agreement-text">This event will take place on the {this.state.selectedDate} start from {this.state.dateHour}:{this.state.dateMinute}</span>
+                          <span className="agreement-text">This event will take place on the {this.state.selectedDate} start from {this.state.dateHour <= 9 ? "0" + this.state.dateHour : this.state.dateHour}:{this.state.dateMinute <= 5 ? "0" + this.state.dateMinute : this.state.dateMinute}</span>
                           <input type="checkbox"/>
                           <span className="checkmark"></span>
                         </label>
@@ -331,7 +331,7 @@ class CreateEvent extends Component {
             </div>
 
             <div className="col-md-3 pl-3 pl-md-2 pl-lg-2 pr-3 pr-md-5 pr-lg-5 pt-4">
-              <div className="mb-3 mb-md-5 mb-lg-5 mt-4 d-flex align-items-center bd-highlight">
+              <div className="pb-1 mb-3 mb-md-5 mb-lg-5 mt-4 d-flex align-items-center bd-highlight">
                 <span className="h2 ml-auto"><Link to='/' id="btn-cancel-2" className="btn-cancel">Cancel</Link></span>
               </div>
               <div className="card px-4 py-4 second-card">

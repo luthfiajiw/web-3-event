@@ -19,7 +19,7 @@ class BottomBar extends Component {
         <ul className="nav list-unstyled d-flex">
           <li className="style-bottom link-bottom-bar">
             <NavLink to="/">
-              <i className="demo-icon demo-icon icon-database-stack">&#xe802;</i>
+              <i className="demo-icon database-icon icon-database-stack">&#xe802;</i>
             </NavLink>
           </li>
           <li className="link-bottom-bar">

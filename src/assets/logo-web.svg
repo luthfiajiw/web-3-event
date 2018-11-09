@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="39.728848mm"
-   height="58.192841mm"
-   viewBox="0 0 39.728848 58.192841"
+   width="39.525909mm"
+   height="56.40411mm"
+   viewBox="0 0 39.52591 56.40411"
    version="1.1"
    id="svg8"
    sodipodi:docname="logo-web.svg"
@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.24748737"
-     inkscape:cx="-482.86644"
-     inkscape:cy="235.51075"
+     inkscape:zoom="0.98994948"
+     inkscape:cx="146.1831"
+     inkscape:cy="179.66026"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -46,7 +46,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -54,10 +54,10 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-50.67795,-94.661628)">
+     transform="translate(-47.982813,-96.191776)">
     <g
        id="g909"
-       transform="matrix(0.50052028,0,0,0.46087996,38.71878,58.458445)">
+       transform="matrix(0.48346547,0.12954418,-0.11928451,0.44517586,56.703923,52.446923)">
       <path
          id="path815"
          d="m 83.424825,130.75905 a 39.687496,39.687498 30 0 1 14.526633,54.21414 39.687496,39.687498 30 0 1 -54.214131,14.52663 39.687496,39.687498 30 0 1 -14.526633,-54.21413 39.687496,39.687498 30 0 1 54.214131,-14.52664 z m -9.921875,17.1852 a 19.843748,19.843749 30 0 0 -27.107065,7.26331 19.843748,19.843749 30 0 0 7.263316,27.10707 19.843748,19.843749 30 0 0 27.107066,-7.26332 19.843748,19.843749 30 0 0 -7.263317,-27.10706 z"

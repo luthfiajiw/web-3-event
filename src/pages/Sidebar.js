@@ -23,7 +23,7 @@ class Sidebar extends Component {
         <ul className="list-unstyled components">
           <li>
             <NavLink to="/">
-              <i className="demo-icon demo-icon icon-database-stack">&#xe802;</i>
+              <i className="demo-icon icon-database-stack">&#xe802;</i>
             </NavLink>
           </li>
           <li>

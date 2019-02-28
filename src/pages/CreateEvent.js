@@ -26,9 +26,12 @@ class CreateEvent extends Component {
   handleChange = (date) => {
     this.setState({
       startDate: date,
-      selectedDate: this.refs.dateValue.input.value,
-      value: date
+      value: date,
+      selectedDate: document.getElementById('date-picker').getAttribute('value')
     })
+  }
+
+  handleDay = () => {
   }
 
   //handle input focus
@@ -134,7 +137,7 @@ class CreateEvent extends Component {
     let date = new Date();
 
     let month = [
-      "Jan", "Feb", "Mar", "Apr", "May",
+      " ","Jan", "Feb", "Mar", "Apr", "May",
       "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
     ]
 
@@ -153,15 +156,6 @@ class CreateEvent extends Component {
       })
     }
   }
-
-  updateDateEvent = () => {
-    const dateValue = this.refs.dateValue;
-
-    this.setState({
-      selectedDate: dateValue.input.value
-    })
-  }
-
 
   componentDidMount() {
     this.dateTime();
@@ -187,14 +181,9 @@ class CreateEvent extends Component {
       }
     })
 
-    this.setState({
-      selectedDate: this.refs.dateValue.input.value
-    })
   }
 
-
   render() {
-    console.log(this.state.selectedDate);
     return (
       <div className="main-panel">
         <div className="container-fluid  create-event">
@@ -205,7 +194,7 @@ class CreateEvent extends Component {
               </div>
               <div className="card px-4 py-4 first-card">
                 <div className="content">
-                  <form>
+                  <form name="form-event">
                     <div className="row">
                       <div className="col-md-12">
                           <label>Title Event</label>
@@ -222,14 +211,15 @@ class CreateEvent extends Component {
                       <div className="col-md-4 mt-3">
                         <label>Day</label>
                           <DatePicker
-                              selected={this.state.startDate}
-                              onChange={this.handleChange}
-                              ref="dateValue"
-                              dateFormat="DD MMMM YYYY"
-                              value={this.state.value}
-                              className="container-datepicker"
-                              placeholderText="Click to select a date"
-                              withPortal
+                            id="date-picker"
+                            selected={this.state.startDate}
+                            onChange={this.handleChange}
+                            name="dateValue"
+                            dateFormat="DD MMMM YYYY"
+                            value={this.state.value}
+                            className="container-datepicker"
+                            placeholderText="Click to select a date"
+                            withPortal
                           />
                       </div>
 

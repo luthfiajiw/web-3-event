@@ -1,4 +1,4 @@
-Event App Template:
+## Event App Template:
 
 This was my first coolest project as a junior React JS developer, i guess :D.
 
